@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  lng: 1.5
+  lat: 1.5
+  accuracy: 
+  text: MyText
+
+two:
+  lng: 1.5
+  lat: 1.5
+  accuracy: 
+  text: MyText
