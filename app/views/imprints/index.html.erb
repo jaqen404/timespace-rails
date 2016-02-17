@@ -1,0 +1,17 @@
+<h1>Listing articles</h1>
+ 
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Text</th>
+  </tr>
+ 
+  <% @imprints.each do |imprint| %>
+    <tr>
+      <td><%= imprint.lng %></td>
+      <td><%= imprint.lat %></td>
+      <td><%= imprint.accuracy %></td>
+      <td><%= imprint.text %></td>
+    </tr>
+  <% end %>
+</table>

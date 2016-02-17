@@ -3,11 +3,11 @@
 one:
   lng: 1.5
   lat: 1.5
-  accuracy: 
-  text: MyText
+  accuracy: 1
+  text: MyString
 
 two:
   lng: 1.5
   lat: 1.5
-  accuracy: 
-  text: MyText
+  accuracy: 1
+  text: MyString
