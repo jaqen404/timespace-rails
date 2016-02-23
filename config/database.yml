@@ -50,6 +50,6 @@ test:
 #
 production:
   <<: *default
+  host: 139.129.26.234
   database: imprints_production
-  username: imprints
   password: <%= ENV['123456'] %>
