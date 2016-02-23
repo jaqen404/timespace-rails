@@ -52,4 +52,4 @@ production:
   <<: *default
   database: imprints_production
   username: imprints
-  password: <%= ENV['IMPRINTS_DATABASE_PASSWORD'] %>
+  password: <%= ENV['123456'] %>
