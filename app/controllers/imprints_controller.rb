@@ -1,4 +1,6 @@
 class ImprintsController < ApplicationController
+	before_action :authenticate_user!, :except => [:show, :index]  
+
 	def new
   	end
 
@@ -12,8 +14,18 @@ class ImprintsController < ApplicationController
 	  	@imprint = Imprint.find(params[:id])
 	end
 
+	CIRCLE50 = 0.000009 * 50;
   	def index
-	  	@imprints = Imprint.all
+  		if (params[:lng])
+  			@imprints = Imprint.where(lng: (params[:lng].to_f - CIRCLE50)..(params[:lng].to_f + CIRCLE50),lat: (params[:lat].to_f - CIRCLE50)..(params[:lat].to_f + CIRCLE50))
+  		else 
+	  		@imprints = Imprint.all
+	  	end
+	  	#@jobs = User.find(params[:user_id]).jobs.recent
+	end
+
+	def search
+
 	end
 
   	private
@@ -24,5 +36,6 @@ class ImprintsController < ApplicationController
 	    params.require(:text)
 	    params.permit(:lng, :lat, :accuracy, :text)
 	  end
+
 
 end

@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
-  resources :imprints
+  devise_for :users
+  resources :imprints do
+    member do
+      post :index
+    end
+  end
   get 'welcome/index'
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -39,6 +39,7 @@
 		<input  id ="accuracy" type="hidden" name="accuracy"> </input>
 		<textarea id="text" type="text" name="text" rows="3" cols="20"></textarea>
 		<button type="button" class="btn btn-primary" onclick="go_lbs()">Primary</button>
+		<%= link_to t(:logout), destroy_user_session_path, :method => :delete %>
 	</form>
     <script src="http://ajax.useso.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
