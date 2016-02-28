@@ -14,7 +14,7 @@ class ImprintsController < ApplicationController
 	  	@imprint = Imprint.find(params[:id])
 	end
 
-	CIRCLE50 = 0.000009 * 50;
+	CIRCLE50 = 0.000009 * 100;
   	def index
   		if (params[:lng])
   			@imprints = Imprint.where(lng: (params[:lng].to_f - CIRCLE50)..(params[:lng].to_f + CIRCLE50),lat: (params[:lat].to_f - CIRCLE50)..(params[:lat].to_f + CIRCLE50))
