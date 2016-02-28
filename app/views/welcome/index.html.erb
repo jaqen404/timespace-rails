@@ -25,6 +25,7 @@
 		<input  id ="lat" type="hidden" name="lat"> </input>
 		<input  id ="accuracy" type="hidden" name="accuracy"> </input>
 		<button type="button" class="btn btn-primary" onclick="go_lbs()">Primary</button>
+		<button type="button" class="btn btn-primary" onclick="go_list()">list</button>
 		<%= link_to t(:logout), destroy_user_session_path, :method => :delete %>
 	</form>
     <script src="http://ajax.useso.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
@@ -69,11 +70,14 @@
 	        $('#lng').val(data.position.getLng());
 	        $('#lat').val(data.position.getLat());
 	        $('#accuracy').val(data.accuracy);
-			$('#myform').submit();
 	    }
 	    //解析定位错误信息
 	    function onError(data) {
 	        document.getElementById('tip').innerHTML = '定位失败';
+	    }
+
+	    function go_list() {
+			$('#myform').submit();
 	    }
     </script>
   </body>
