@@ -1,5 +1,5 @@
     <h1>New Imprint</h1>
-	<div id='container' style="display:block"></div>
+	<div id='container' style="display:block;width:100%;height:100px"></div>
 	<div id="tip"></div>
 	<form id="myform" action="/imprints/index" method ="post">
 		<input id ="lng" type="hidden" name="lng"></input>
@@ -14,7 +14,7 @@
     <!-- jQuery first, then Bootstrap JS. -->
     <script type="text/javascript">
  		$(function() {
- 			go_lbs();
+ 			// go_lbs();
  		});
 	    var map, geolocation;
 	    //加载地图，调用浏览器定位服务
@@ -53,7 +53,7 @@
 	        $('#lng').val(data.position.getLng());
 	        $('#lat').val(data.position.getLat());
 	        $('#accuracy').val(data.accuracy);
-	        $('#myform').submit();
+	        // $('#myform').submit();
 	    }
 	    //解析定位错误信息
 	    function onError(data) {
