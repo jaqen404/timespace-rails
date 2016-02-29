@@ -1,38 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags always come first -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css">
-    <style type="text/css">
-      body,html,#container{
-        height: 300px;
-        margin: 15px
-      }
-    </style>
-    <title>快速入门</title>
-  </head>
-  <body>
     <h1>New Imprint</h1>
-	<div id='container' style="display:none"></div>
+	<div id='container' style="display:block"></div>
 	<div id="tip"></div>
 	<form id="myform" action="/imprints/index" method ="post">
 		<input id ="lng" type="hidden" name="lng"></input>
 		<input  id ="lat" type="hidden" name="lat"> </input>
 		<input  id ="accuracy" type="hidden" name="accuracy"> </input>
-		<button type="button" class="btn btn-primary" onclick="go_lbs()">Primary</button>
-		<button type="button" class="btn btn-primary" onclick="go_list()">list</button>
+		<button type="button"  onclick="go_lbs()">Primary</button>
+		<button type="button"  onclick="go_list()">list</button>
 		<%= link_to t(:logout), destroy_user_session_path, :method => :delete %>
 	</form>
     <script src="http://ajax.useso.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
     <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.3&key=069a4c1ca117997f57125da86fec90b3"></script>
     <!-- jQuery first, then Bootstrap JS. -->
     <script type="text/javascript">
+ 		$(function() {
+ 			go_lbs();
+ 		});
 	    var map, geolocation;
 	    //加载地图，调用浏览器定位服务
 	    map = new AMap.Map('container', {
@@ -70,6 +53,7 @@
 	        $('#lng').val(data.position.getLng());
 	        $('#lat').val(data.position.getLat());
 	        $('#accuracy').val(data.accuracy);
+	        $('#myform').submit();
 	    }
 	    //解析定位错误信息
 	    function onError(data) {
@@ -80,5 +64,3 @@
 			$('#myform').submit();
 	    }
     </script>
-  </body>
-</html>
